@@ -1,21 +1,22 @@
 import React from 'react';
-import { CountComp } from './components/CountComp';
+import { ChessComp } from './components/ChessComp';
+import { ChessType } from './types/enums';
 
-interface IState {
-    num:number
-}
+export class App extends React.Component {
 
-export class App extends React.Component<{}, IState> {
-    state: IState = {
-        num: 0
-    }
     render() {
         return (
-            <CountComp num={this.state.num} onChange={n => {
-                this.setState({
-                    num: n
-                })
-            }} />
+            <div>
+                <ChessComp type={ChessType.none} onClick={() => {
+                    console.log("被点击了")
+                }} />
+                <ChessComp type={ChessType.black} onClick={() => {
+                    console.log("被点击了")
+                }} />
+                <ChessComp type={ChessType.red} onClick={() => {
+                    console.log("被点击了")
+                }} />
+            </div>
         )
     }
 }
