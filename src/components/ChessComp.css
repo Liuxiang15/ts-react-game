@@ -3,6 +3,7 @@
     height: 50px;
     border: 2px solid lightgray;
     display: flex;
+    box-sizing: border-box;
     justify-content: center;
     align-items: center;
     cursor: pointer;

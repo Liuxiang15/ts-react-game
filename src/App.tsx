@@ -1,21 +1,30 @@
 import React from 'react';
-import { ChessComp } from './components/ChessComp';
+import { BoardComp } from './components/BoardComp';
 import { ChessType } from './types/enums';
+
+const chesses: ChessType[] = [
+    ChessType.black,
+    ChessType.red,
+    ChessType.none,
+    ChessType.none,
+    ChessType.black,
+    ChessType.red,
+    ChessType.black,
+    ChessType.red,
+    ChessType.black,
+]
 
 export class App extends React.Component {
 
     render() {
         return (
             <div>
-                <ChessComp type={ChessType.none} onClick={() => {
-                    console.log("被点击了")
-                }} />
-                <ChessComp type={ChessType.black} onClick={() => {
-                    console.log("被点击了")
-                }} />
-                <ChessComp type={ChessType.red} onClick={() => {
-                    console.log("被点击了")
-                }} />
+                <BoardComp
+                    chesses={chesses}
+                    onClick={i => {
+                        console.log(i);
+                    }}
+                />
             </div>
         )
     }
