@@ -1,5 +1,5 @@
 export enum ChessType {
-    none,
+    none = 0,
     red,
     black
 }
